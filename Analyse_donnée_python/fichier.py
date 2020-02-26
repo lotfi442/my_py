@@ -112,6 +112,12 @@ print(personnage1["How far will you travel for Thanksgiving?"].value_counts())
 #des questions « Have you ever tried to meet up with hometown friends on Thanksgiving night? » 
 #et « Have you ever attended a "Friendsgiving?" ». 
 
+print(data.pivot_table(index = ['Have you ever tried to meet up with hometown friends on Thanksgiving night?'], 
+	columns = ['Have you ever attended a "Friendsgiving?"'], values=['int_age'], aggfunc=pd.Series.mean))
 
+#Faire de même avec les revenus avec ces deux questions
+
+print(data.pivot_table(index = ['Have you ever tried to meet up with hometown friends on Thanksgiving night?'], 
+columns = ['Have you ever attended a "Friendsgiving?"'], values=['int_income'], aggfunc=pd.Series.mean))
 
 
